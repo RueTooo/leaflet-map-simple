@@ -26,21 +26,21 @@
 <script>
     // Map Initialization
     var map = L.map('map');
-    var bounds = [[-789, -1262], [789, 1262]];
+    var bounds = [[-157.8, -252.4], [157.8, 252.4]];
     var image = L.imageOverlay('labelled_Sylvari_map.png', bounds).addTo(map);
     map.fitBounds(bounds);
     //Marker
     var myIcon = L.icon({
-    iconUrl: 'Skyrim icons/SR-mapicon-Cave.png',
-    iconSize: [40, 40],
-    });
-    var singleMarker = L.marker([50.5, 30.5], {icon: myIcon});
+        iconUrl: 'Skyrim icons/SR-mapicon-Cave.png',
+        iconSize: [40, 40],
+        });
+    var singleMarker = L.marker([0, 0], {icon: myIcon});
     var popup = singleMarker.bindPopup('This is a marker!').openPopup()
     popup.addTo(map);
     var littleton = L.marker([39.61, 55.02], {icon: myIcon}).bindPopup('This is Littleton, CO.'),
-    denver    = L.marker([39.74, 64.99]).bindPopup('This is Denver, CO.'),
-    aurora    = L.marker([39.73, 94.8]).bindPopup('This is Aurora, CO.'),
-    golden    = L.marker([39.77, 115.23]).bindPopup('This is Golden, CO.');
+        denver    = L.marker([39.74, 64.99]).bindPopup('This is Denver, CO.'),
+        aurora    = L.marker([39.73, 94.8]).bindPopup('This is Aurora, CO.'),
+        golden    = L.marker([39.77, 115.23]).bindPopup('This is Golden, CO.');
     var cities = L.layerGroup([littleton, denver, aurora, golden, singleMarker]);
     //cities.addTo(map);
     //Layer controller
