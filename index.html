@@ -37,10 +37,11 @@
     var singleMarker = L.marker([4.2823944091796875,-159.41481018066406], {icon: myIcon});
     var popup = singleMarker.bindPopup('This is a marker!').openPopup()
     popup.addTo(map);
-    var littleton = L.marker([39.61, 55.02], {icon: myIcon}).bindPopup('This is Littleton, CO.'),
+    var littleton = L.marker([39.61, 55.02], {icon: myIcon}).bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a>'),
         denver    = L.marker([39.74, 64.99]).bindPopup('This is Denver, CO.'),
         aurora    = L.marker([39.73, 94.8]).bindPopup('This is Aurora, CO.'),
         golden    = L.marker([39.77, 115.23]).bindPopup('This is Golden, CO.');
+        //.bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
     var cities = L.layerGroup([littleton, denver, aurora, golden, singleMarker]);
     //cities.addTo(map);
     //Layer controller
