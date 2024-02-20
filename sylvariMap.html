@@ -37,15 +37,23 @@
     fortIcon = L.icon({
         iconUrl: 'Skyrim icons/SR-mapicon-Fort.png',
         iconSize: [30, 30],    
-        })
+        }),
     keepIcon = L.icon({
         iconUrl: 'Skyrim icons/SR-mapicon-Keep.png',
         iconSize: [30, 30],
-    });
+        }),
+    swIcon = L.icon({
+        iconUrl: 'Skyrim icons/SR-mapicon-To_Skyrim.png',
+        iconSize: [30, 30],
+        }),    
+    castleIcon = L.icon({
+        iconUrl: 'Skyrim icons/SR-mapicon-Castle.png',
+        iconSize: [30, 30],
+        });
     var starfallBastion = L.marker([121,50], {icon: townIcon}).bindTooltip('Starfall Bastion'),
         ebonthornStronghold  = L.marker([105,-64], {icon: fortIcon}).bindTooltip('Ebonthorn Stronghold'),
         sablehaven  = L.marker([90,-160], {icon: townIcon}).bindTooltip('Sablehaven'),
-        irieabor  = L.marker([0, 8], {icon: townIcon}).bindTooltip('Irieabor'),
+        irieabor  = L.marker([0, 8], {icon: castleIcon}).bindTooltip('Irieabor'),
         queldorianKingdom  = L.marker([50, 203], {icon: townIcon}).bindTooltip('Quel\'dorian Kingdom'),
         sylvuskaKingdom  = L.marker([-12,203], {icon: townIcon}).bindTooltip('Sylvuska Kingdom'),
         xunielFief  = L.marker([-61,172], {icon: townIcon}).bindTooltip('Xuniel Fief'),
@@ -55,11 +63,12 @@
         orllanarKingdom  = L.marker([-110,-82], {icon: townIcon}).bindTooltip('Orllanar Kingdom'),
         daolinReach  = L.marker([-83,-136], {icon: townIcon}).bindTooltip('Daolin Reach'),
         ironwoodCitadel    = L.marker([2,-156], {icon: keepIcon}).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/ironwood-citadel/"><h1> Ironwood Citadel </h1></a>').bindTooltip('<u>Ironwood Citadel</u>');
-        //.bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
     var cities = L.layerGroup([starfallBastion, ebonthornStronghold, sablehaven, irieabor,queldorianKingdom, sylvuskaKingdom, xunielFief, melianmarHarbor, courtOfAetheria, sprocktonSpire, orllanarKingdom, daolinReach, ironwoodCitadel]);
+    var toYewdon = L.marker([-6,-222], {icon: swIcon}).bindTooltip('To Yewdon');
     //Layer controller
     var overlayMaps = {
-        "Markers": cities
+        "Markers": cities,
+        "Arrows": toYewdon
     };
     var baseMaps = {
     "Map": image,
