@@ -25,28 +25,36 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
     // Map Initialization
-    var map = L.map('map', {minZoom: -5, crs: L.CRS.Simple});
+    var map = L.map('map', {minZoom: -1, crs: L.CRS.Simple, zoomDelta: 1});
     var bounds = [[-157.8, -252.4], [157.8, 252.4]];
     var image = L.imageOverlay('labelled_Sylvari_map.png', bounds).addTo(map);
     map.fitBounds(bounds);
     //Marker
     var townIcon = L.icon({
         iconUrl: 'Skyrim icons/SR-mapicon-Town.png',
-        iconSize: [40, 40],
-        });
-    var starfallBastion = L.marker([121,50], {icon: townIcon}).bindPopup('Starfall Bastion'),
-        ebonthornStronghold  = L.marker([105,-64]).bindPopup('Ebonthorn Stronghold'),
-        sablehaven  = L.marker([90,-160]).bindPopup('Sablehaven'),
-        irieabor  = L.marker([0, 8]).bindPopup('Irieabor'),
-        queldorianKingdom  = L.marker([50, 203]).bindPopup('Quel\'dorian Kingdom'),
-        sylvuskaKingdom  = L.marker([-12,203]).bindPopup('Sylvuska Kingdom'),
-        xunielFief  = L.marker([-61,172]).bindPopup('Xuniel Fief'),
-        melianmarHarbor  = L.marker([-82,118]).bindPopup('Melianmar Harbor'),
-        courtOfAetheria  = L.marker([-121,69]).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/court-of-aetheria/"><h1> Court of Aetheria </h1></a>'),
-        sprocktonSpire  = L.marker([-133,5]).bindPopup('Sprockton Spire'),
-        orllanarKingdom  = L.marker([-110,-82]).bindPopup('Orllanar Kingdom'),
-        daolinReach  = L.marker([-83,-136]).bindPopup('Daolin Reach'),
-        ironwoodCitadel    = L.marker([2,-156]).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/ironwood-citadel/"><h1> Ironwood Citadel </h1></a>');
+        iconSize: [30, 30],
+        }),
+    fortIcon = L.icon({
+        iconUrl: 'Skyrim icons/SR-mapicon-Fort.png',
+        iconSize: [30, 30],    
+        })
+    keepIcon = L.icon({
+        iconUrl: 'Skyrim icons/SR-mapicon-Keep.png',
+        iconSize: [30, 30],
+    });
+    var starfallBastion = L.marker([121,50], {icon: townIcon}).bindTooltip('Starfall Bastion'),
+        ebonthornStronghold  = L.marker([105,-64], {icon: fortIcon}).bindTooltip('Ebonthorn Stronghold'),
+        sablehaven  = L.marker([90,-160], {icon: townIcon}).bindTooltip('Sablehaven'),
+        irieabor  = L.marker([0, 8], {icon: townIcon}).bindTooltip('Irieabor'),
+        queldorianKingdom  = L.marker([50, 203], {icon: townIcon}).bindTooltip('Quel\'dorian Kingdom'),
+        sylvuskaKingdom  = L.marker([-12,203], {icon: townIcon}).bindTooltip('Sylvuska Kingdom'),
+        xunielFief  = L.marker([-61,172], {icon: townIcon}).bindTooltip('Xuniel Fief'),
+        melianmarHarbor  = L.marker([-82,118], {icon: townIcon}).bindTooltip('Melianmar Harbor'),
+        courtOfAetheria  = L.marker([-121,69], {icon: townIcon}).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/court-of-aetheria/"><h1> Court of Aetheria </h1></a>').bindTooltip('<u>Court of Aetheria</u>'),
+        sprocktonSpire  = L.marker([-133,5], {icon: townIcon}).bindTooltip('Sprockton Spire'),
+        orllanarKingdom  = L.marker([-110,-82], {icon: townIcon}).bindTooltip('Orllanar Kingdom'),
+        daolinReach  = L.marker([-83,-136], {icon: townIcon}).bindTooltip('Daolin Reach'),
+        ironwoodCitadel    = L.marker([2,-156], {icon: keepIcon}).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/ironwood-citadel/"><h1> Ironwood Citadel </h1></a>').bindTooltip('<u>Ironwood Citadel</u>');
         //.bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
     var cities = L.layerGroup([starfallBastion, ebonthornStronghold, sablehaven, irieabor,queldorianKingdom, sylvuskaKingdom, xunielFief, melianmarHarbor, courtOfAetheria, sprocktonSpire, orllanarKingdom, daolinReach, ironwoodCitadel]);
     //Layer controller
