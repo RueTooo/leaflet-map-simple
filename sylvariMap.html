@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+    <!-- leaflet css-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
+<!-- leaflet js-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    // Map Initialization
+    var map = L.map('map', {minZoom: -5, crs: L.CRS.Simple});
+    var bounds = [[-157.8, -252.4], [157.8, 252.4]];
+    var image = L.imageOverlay('labelled_Sylvari_map.png', bounds).addTo(map);
+    map.fitBounds(bounds);
+    //Marker
+    var townIcon = L.icon({
+        iconUrl: 'Skyrim icons/SR-mapicon-Town.png',
+        iconSize: [40, 40],
+        });
+    var starfallBastion = L.marker([121,50], {icon: townIcon}).bindPopup('<a href="https://deep-roots-campaign.vercel.app/entities/np-cs/dig-team/asha-skysong/"><h1> Asha Skysong </h1></a>'),
+        ebonthornStronghold  = L.marker([105,-64]).bindPopup('Ebonthorn Stronghold'),
+        sablehaven  = L.marker([90,-160]).bindPopup('This is Aurora, CO.'),
+        irieabor  = L.marker([0, 8]).bindPopup('This is Aurora, CO.'),
+        queldorianKingdom  = L.marker([50, 203]).bindPopup('This is Aurora, CO.'),
+        sylvuskaKingdom  = L.marker([-12,203]).bindPopup('This is Aurora, CO.'),
+        xunielFief  = L.marker([-61,172]).bindPopup('This is Aurora, CO.'),
+        melianmarHarbor  = L.marker([-82,118]).bindPopup('This is Aurora, CO.'),
+        courtOfAetheria  = L.marker([-121,69]).bindPopup('This is Aurora, CO.'),
+        sprocktonSpire  = L.marker([-133,5]).bindPopup('This is Aurora, CO.'),
+        orllanarKingdom  = L.marker([-110,-82]).bindPopup('This is Aurora, CO.'),
+        daolinReach  = L.marker([-83,-136]).bindPopup('This is Aurora, CO.'),
+        ironwoodCitadel    = L.marker([2,-156]).bindPopup('This is Golden, CO.');
+        //.bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
+    var cities = L.layerGroup([starfallBastion, ebonthornStronghold, sablehaven, irieabor,queldorianKingdom, sylvuskaKingdom, xunielFief, melianmarHarbor, courtOfAetheria, sprocktonSpire, orllanarKingdom, daolinReach]);
+    //Layer controller
+    var overlayMaps = {
+        "Markers": cities
+    };
+    var baseMaps = {
+    "Map": image,
+};
+    L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(map);
+</script>
