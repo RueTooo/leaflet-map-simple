@@ -34,21 +34,21 @@
         iconUrl: 'Skyrim icons/SR-mapicon-Town.png',
         iconSize: [40, 40],
         });
-    var starfallBastion = L.marker([121,50], {icon: townIcon}).bindPopup('<a href="https://deep-roots-campaign.vercel.app/entities/np-cs/dig-team/asha-skysong/"><h1> Asha Skysong </h1></a>'),
+    var starfallBastion = L.marker([121,50], {icon: townIcon}).bindPopup('Starfall Bastion'),
         ebonthornStronghold  = L.marker([105,-64]).bindPopup('Ebonthorn Stronghold'),
-        sablehaven  = L.marker([90,-160]).bindPopup('This is Aurora, CO.'),
-        irieabor  = L.marker([0, 8]).bindPopup('This is Aurora, CO.'),
-        queldorianKingdom  = L.marker([50, 203]).bindPopup('This is Aurora, CO.'),
-        sylvuskaKingdom  = L.marker([-12,203]).bindPopup('This is Aurora, CO.'),
-        xunielFief  = L.marker([-61,172]).bindPopup('This is Aurora, CO.'),
-        melianmarHarbor  = L.marker([-82,118]).bindPopup('This is Aurora, CO.'),
-        courtOfAetheria  = L.marker([-121,69]).bindPopup('This is Aurora, CO.'),
-        sprocktonSpire  = L.marker([-133,5]).bindPopup('This is Aurora, CO.'),
-        orllanarKingdom  = L.marker([-110,-82]).bindPopup('This is Aurora, CO.'),
-        daolinReach  = L.marker([-83,-136]).bindPopup('This is Aurora, CO.'),
-        ironwoodCitadel    = L.marker([2,-156]).bindPopup('This is Golden, CO.');
+        sablehaven  = L.marker([90,-160]).bindPopup('Sablehaven'),
+        irieabor  = L.marker([0, 8]).bindPopup('Irieabor'),
+        queldorianKingdom  = L.marker([50, 203]).bindPopup('Quel\'dorian Kingdom'),
+        sylvuskaKingdom  = L.marker([-12,203]).bindPopup('Sylvuska Kingdom'),
+        xunielFief  = L.marker([-61,172]).bindPopup('Xuniel Fief'),
+        melianmarHarbor  = L.marker([-82,118]).bindPopup('Melianmar Harbor'),
+        courtOfAetheria  = L.marker([-121,69]).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/court-of-aetheria/"><h1> Court of Aetheria </h1></a>'),
+        sprocktonSpire  = L.marker([-133,5]).bindPopup('Sprockton Spire'),
+        orllanarKingdom  = L.marker([-110,-82]).bindPopup('Orllanar Kingdom'),
+        daolinReach  = L.marker([-83,-136]).bindPopup('Daolin Reach'),
+        ironwoodCitadel    = L.marker([2,-156]).bindPopup('<a href="https://deep-roots-campaign.vercel.app/locations/prime-material-plane-rakauvi/sylvari/ironwood-citadel/"><h1> Ironwood Citadel </h1></a>');
         //.bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
-    var cities = L.layerGroup([starfallBastion, ebonthornStronghold, sablehaven, irieabor,queldorianKingdom, sylvuskaKingdom, xunielFief, melianmarHarbor, courtOfAetheria, sprocktonSpire, orllanarKingdom, daolinReach]);
+    var cities = L.layerGroup([starfallBastion, ebonthornStronghold, sablehaven, irieabor,queldorianKingdom, sylvuskaKingdom, xunielFief, melianmarHarbor, courtOfAetheria, sprocktonSpire, orllanarKingdom, daolinReach, ironwoodCitadel]);
     //Layer controller
     var overlayMaps = {
         "Markers": cities
