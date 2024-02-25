@@ -25,7 +25,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
     // Map Initialization (y, x)
-    var map = L.map('map', {minZoom: -8, crs: L.CRS.Simple, zoomDelta: 1});
+    var map = L.map('map', {minZoom: -2, crs: L.CRS.Simple, zoomDelta: 1});
     var bounds = [[0, 0], [-1158, 1448]];
     var image = L.imageOverlay('Images/Maps/rakauvi_map.jpeg', bounds).addTo(map);
     map.fitBounds(bounds);
